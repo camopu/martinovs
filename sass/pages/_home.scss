@@ -1,0 +1,1238 @@
+.section {
+  h2 {
+    text-align: center;
+    margin-bottom: .9em;
+  }
+}
+
+.section-hero {
+  position: relative;
+  padding-top: 0;
+  .block-wrapper {
+    @include flexbox();
+    @include flexwrap(wrap);
+    margin-left: -60px;
+    padding-left: 11.8%;
+    position: relative;
+    @include breakpoint(xxl) {
+      margin-left: -30px;
+    }
+    @include breakpoint(md) {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    &:before {
+      top: 3%;
+      left: 0;
+      @include breakpoint(md) {
+        top: -2%;
+        left: -20px;
+        width: 31vw;
+        height: 124px;
+      }
+    }
+  }
+
+  .block-title {
+    width: 50%;
+    @include breakpoint(md) {
+      width: 100%;
+    }
+    
+
+    h1 {
+      span {
+        display: inline-block;
+        white-space: nowrap;
+      }
+      @include breakpoint(md) {
+        max-width: 350px;
+      }
+
+      &:before {      
+        bottom: -70%;
+        right: -21%; 
+        @include breakpoint(md) {
+          display: none;
+        }
+      }
+    }
+
+    ul {
+      max-width: 600px;
+      margin: 0 -10px;
+      @include breakpoint(xxl) {
+        max-width: 420px;
+      }
+      li {
+        font-size: 24px;
+        font-weight: 300;
+        position: relative;
+        padding: 20px 10px;
+        @include flexbox();
+        align-items: flex-start;
+        @include breakpoint(xxxl) {
+          font-size: 20px;
+        }
+        @include breakpoint(xxl) {
+          font-size: 16px;
+          padding: 10px;
+        }
+        @include breakpoint(md) {
+          font-size: 14px;
+        }
+        &:before {
+          content: '+';
+          // position: absolute;
+          // top: 50%;
+          // left: 0;
+          color: $latte;
+          font-size: 40px;
+          font-weight: $font-weight-bold;
+          padding-right: 20px;
+          @include breakpoint(xxxl) {
+            font-size: 36px;
+          }
+          @include breakpoint(xxl) {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .block-slider {
+    max-width: 732px;
+    width: 45%;
+    margin-left: 5%;
+    margin-top: -50px;
+    @include breakpoint(xxxl) {
+      margin-top: 0;
+    }
+    @include breakpoint(md) {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0;
+    }
+
+    .slick-prev,
+    .slick-next {
+      position: absolute;
+      bottom: 30px;
+      background-color: $white;
+      border: 1px solid $white;
+      font-size: 0;
+      width: 52px;
+      height: 52px;
+      z-index: 1;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+      }
+    }
+    .slick-next {
+      right: 20px;
+      &:before {
+        border-top: 8px solid transparent;
+        border-left: 8px solid $black;
+        border-bottom: 8px solid transparent;
+      }
+
+    }
+    .slick-prev {
+      right: 82px;
+      &:before {
+        border-top: 8px solid transparent;
+        border-right: 8px solid $black;
+        border-bottom: 8px solid transparent;
+      }
+    }
+
+    .slick-slide {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .block-info {
+    @include flexbox();
+    justify-content: space-between;
+    @include flexwrap(wrap);
+    margin: -16vw -15px 0;
+    width: 50%;
+    background-image: url(../../images/content/hero-bg-dots-latte.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 56% 0;
+    padding-top: 37px;
+    @include breakpoint(xxxl) {
+      justify-content: flex-start;
+      margin-top: -12vw;
+    }
+    // @include breakpoint(xxl) {
+    //   @include direction(column);
+    // }
+    @include breakpoint(xl) {
+      margin-top: 0;
+      //@include direction(row);
+      justify-content: space-between;
+      width: 100%;
+    }
+    @include breakpoint(md) {
+      @include direction(column);
+      background-position: 100px 0;
+    }
+
+    h5 {
+      color: $latte;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      @include breakpoint(xxl) {
+        font-size: 16px;
+      }
+      @include breakpoint(md) {
+        font-size: 14px;
+      }
+    }
+
+    .block-info__item {
+      max-width: 242px;
+      padding: 20px 15px;
+      @include breakpoint(md) {
+        padding: 10px 15px;
+      }
+
+      &_address {
+        max-width: 338px;
+      }
+
+      &_time {
+        p {
+          margin: 0;
+        }
+      }
+
+      &_phone {
+        @include breakpoint(xxxl) {
+          width: 100%;
+        }
+        @include breakpoint(xl) {
+          width: inherit;
+        }
+      }
+    }
+  }
+}
+
+.section-about-us {
+
+  .row {
+    align-items: center;
+  }
+
+  .block-img {
+    background-color: $latte;
+    padding: 12.7% 17.2% 12.7% 24%;
+    max-height: 767px;
+    margin-left: -60px;
+    position: relative;
+    @include breakpoint(xxl) {
+      margin-left: -30px;
+    }
+    @include breakpoint(md) {
+      margin: 0 -20px 26px -20px;
+    }
+
+    .block-text {
+      position: absolute;
+
+      p {
+        color: $milk;
+        text-transform: uppercase;
+        font-size: 120px;
+        letter-spacing: 0.2em;
+        line-height: 1.17em;
+        @include breakpoint(xxxl) {
+          font-size: 100px;
+        }
+        @include breakpoint(xxl) {
+          font-size: 80px;
+        }
+        @include breakpoint(md) {
+          font-size: 48px;
+        }
+        strong {
+          display: block;
+        }
+      }
+
+      &_cakes {
+        top: 0;
+        left: -4px;
+      }
+      &_coffee {
+        bottom: -19px;
+        right: 0;
+        @include breakpoint(md) {
+          bottom: -10px;
+        }
+      }
+    }
+  }
+
+  .block-info {
+    margin-left: 18%;
+    @include breakpoint(md) {
+      margin-left: 0;
+    }
+
+    &:before {
+      top: -13%;
+      right: -40px;
+      @include breakpoint(xxl) {
+        right: -30px;
+      }
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+
+    p {
+      max-width: 572px;
+      line-height: 1.625em;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      max-width: 254px;
+      margin-top: 40px;
+      @include breakpoint(md) {
+        max-width: 180px;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.section-social {
+  padding-top: 80px;
+
+  h2 {
+    margin-bottom: .5em;
+  }
+
+  .block-info {
+    @include flexbox();
+    align-items: center;
+    //margin: 0 -1%;
+    margin: 28px -14px 0px;
+    @include breakpoint(xl) {
+      align-items: flex-start;
+      margin-top: 38px;
+    }
+    @include breakpoint(md) {
+      margin: 0 -10px;
+  }
+
+    &__item {
+      //@extend: 1%;
+      padding: 14px;
+      @include breakpoint(md) {
+        padding: 10px;
+      }
+    }
+
+    &__bg {
+      width: 25%;
+
+      span {
+        display: block;
+        height: 90px;
+        background-color: $chocolate;
+        width: calc(100% + 60px);  
+        @include breakpoint(xxl) {
+          width: calc(100% + 30px);
+        }
+        @include breakpoint(md) {
+          width: calc(100% + 20px);
+          height: 39px;
+        }
+
+        &:before {
+          top: -30%;
+          left: 50%;
+          transform: translateX(-50%);
+          @include breakpoint(xxl) {
+            top: -11%;
+          }
+          @include breakpoint(xl) {
+            left: 0;
+            transform: unset;
+          }
+          @include breakpoint(md) {
+            left: -100%;
+            width: 38vw;
+            height: 58px;
+            background-size: 100% 20%;
+          }
+        }
+      }
+      &:first-child {
+        span {
+          margin-left: -60px;
+          @include breakpoint(xxl) {
+            margin-left: -30px;
+          }
+          @include breakpoint(md) {
+            margin-left: -20px;
+          }
+        }       
+      }
+      &:last-child {
+        @include breakpoint(xl) {
+          display: none;
+        }
+        span {
+          margin-right: -60px;
+        } 
+      }
+    }
+
+    &__text {
+      @include flexbox();
+      align-items: center;
+      justify-content: space-between;
+      width: 50%;
+      @include breakpoint(xl) {
+        @include direction(column);
+        align-items: flex-start;
+        width: 75%;
+      }
+
+      .btn {
+        max-width: 254px;
+        //margin-left: 4%;
+        margin-right: 4%;
+        @include breakpoint(xl) {
+          margin: 20px 0 0;
+        }
+        @include breakpoint(md) {
+          max-width: 180px;
+        }
+      }
+    }
+  }
+}
+
+.section-newbrand {
+
+  .newbrand-slider {
+
+    .slick-slide {
+      margin: 0 14px;
+      @include breakpoint(md) {
+        margin: 0 10px;
+      }
+    }
+
+    .slick-list {
+      margin: 0 -14px;
+      @include breakpoint(md) {
+        margin: 0 -10px;
+      }
+    }
+    
+      a {
+        display: block;
+        text-align: center;
+      }
+
+      .block-img {
+        margin-bottom: 26px;
+        position: relative;
+        max-height: 27vw;
+        overflow: hidden;
+        @include breakpoint(md) {
+          max-height: 436px;
+        }
+        @include breakpoint(xs) {
+          max-height: 183px;
+        }
+
+        p {
+          position: absolute;
+          top: 0;
+          left: 20px;
+          font-family: $second-font-family;
+          font-size: 36px;
+          letter-spacing: 0.1em;
+          line-height: 1.4em;
+          color: $white;
+          text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          text-transform: uppercase;
+          @include breakpoint(xxl) {
+            font-size: 24px;
+          }
+          @include breakpoint(md) {
+            font-size: 18px;
+          }
+        }
+      }
+
+      h4 {
+        min-height: 56px;
+        @include breakpoint(md) {
+          font-size: 14px;
+          min-height: 48px;
+        }
+      }
+
+      .price {
+        display: inline-block;
+        font-family: $second-font-family;
+        font-weight: $font-weight-bold;
+        font-size: 36px;
+        color: $latte;
+        padding-bottom: 15px;
+        position: relative;
+        @include breakpoint(xxl) {
+          font-size: 24px;
+        }
+        span {
+          font-size: 22px;
+          @include breakpoint(xxl) {
+            font-size: 14px;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-image: url(../../images/content/line-latte.svg);
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    
+  }
+
+  .btn {
+    margin: 30px auto 0;
+  }
+}
+
+.section-stock {
+  position: relative;
+  overflow: hidden;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16.8vw;
+      height: 7.3vw;
+      background-image: url(../../images/content/line-dark.svg);
+      background-position: 0 0;
+      background-size: 95% 13%;
+      background-repeat: repeat;
+      @include breakpoint(xl) {
+        height: 140px;
+      }
+      @include breakpoint(md) {
+          width: 100%;
+          height: 100px;
+          top: 20%;
+          transform: unset;
+          background-size: 50% 13%;
+      }
+    }
+    &:before {
+      left: 60px;
+      @include breakpoint(xxl) {
+        left: 0;
+    }
+      @include breakpoint(md) {
+        left: -82%;
+      }
+    }
+    &:after {
+      right: 60px;
+      @include breakpoint(xxl) {
+        right: 0;
+    }
+      @include breakpoint(md) {
+        right: -86%;
+      }
+    }
+
+  .dots-bg {
+    &:before {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+  .block-right {
+    .dots-bg {
+      &:before {
+        right: 0;
+      }
+    }
+  }
+
+  .block-wrapper {
+    padding: 45px 5.45vw;
+    border: 1px solid $chocolate;
+    max-width: 1500px;
+    margin: 0 auto;
+    @include flexbox();
+
+    @include breakpoint(xxl) {
+      padding: 50px 11.8%;
+    }
+    @include breakpoint(md) {
+      padding: 24px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .block-img {
+      max-width: 21.875vw;
+      max-height: 21.875vw;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-right: 40px;
+      position: relative;
+      @include breakpoint(xxl) {
+        margin-left: -30px;
+      }
+      @include breakpoint(md) {
+        margin: 0 auto 17px;
+        max-width: 208px;
+        max-height: 208px;
+      }
+
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 1.78em;
+        height: 1.78em;
+        border-radius: 50%;
+        font-family: $second-font-family;
+        font-size: 72px;
+        color: $white;
+        background-color: $latte;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        @include breakpoint(xxl) {
+          font-size: 50px;
+        }
+        @include breakpoint(xl) {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .block-text {
+      h2 {
+        text-align: left;
+        margin-bottom: 20px;
+        @include breakpoint(xxl) {
+          max-width: 600px;
+        }
+        @include breakpoint(md) {
+          text-align: center;
+        }
+      }
+      .indent {
+        padding-left: 40px;
+        @include breakpoint(md) {
+          padding-left: 20px;
+        }
+      }
+
+      .desctop-only {
+        p {
+          font-weight: 300;
+          margin-bottom: 20px;
+        }
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 0;
+        @include breakpoint(md) {
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+      }
+
+      #clock {
+        margin-bottom: 28px;
+        @include breakpoint(md) {
+          margin-bottom: 16px;
+        }
+
+        strong {
+          font-size: 72px;
+          @include breakpoint(xxl) {
+            font-size: 48px;
+        }
+          @include breakpoint(md) {
+            font-size: 30px;
+            line-height: 1em;
+          }
+        }
+        span {
+          padding-left: 1.4em;
+          @include breakpoint(xxl) {
+            padding-left: 10px;
+          }
+          @include breakpoint(md) {
+            font-size: 12px;
+            padding-left: 5px;
+          }
+        }
+      }
+
+      .btn {
+        max-width: 230px;
+        @include breakpoint(md) {
+          max-width: 157px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+#clock {
+  color: $latte;
+  @include flexbox();
+  font-family: $second-font-family;
+
+  strong {
+    display: block;
+    line-height: 1.2em;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.tabs {
+  &__caption {
+    @include flexbox();
+    justify-content: center;
+    
+    li {
+      font-size: 18px;
+      text-transform: uppercase;
+      color: $chocolate;
+      letter-spacing: 0.1em;
+      font-family: $second-font-family;
+      font-weight: $font-weight-bold;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      position: relative;
+      transition: color .3s ease;
+      @include breakpoint(md) {
+        font-size: 14px;
+      }
+      &:hover {
+        color: $latte;
+      }
+
+      &.active {
+        color: $latte;
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-image: url(../../images/content/line-latte-tabs.svg);
+          background-position: 0 0;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.section-news {
+  h2 {
+    margin-bottom: .5em;
+  }
+  .tabs {
+    &__caption {
+      margin-bottom: 16px;
+    }
+  }
+  .news-slider {
+    .slick-slide {
+      margin: 0 14px;
+      @include breakpoint(md) {
+        margin: 0 10px;
+      }
+    }
+
+    .slick-list {
+      margin: 0 -14px;
+      @include breakpoint(md) {
+        margin: 0 -10px;
+      }
+    }
+
+    &__item {
+      .block-desc {
+        background: linear-gradient(180deg, rgba(38, 10, 0, 0) 0%, rgba(38, 10, 0, 0.7) 60.43%);
+        padding: 40px 20px 40px 30px;
+        height: 585px;
+        @include flexbox();
+        flex-direction: column;
+        justify-content: flex-end;
+        @include breakpoint(md) {
+          width: 230px;
+          height: 320px;
+          padding: 9px;
+        }
+      }
+
+      a {
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top left;
+      }
+
+      h5 {
+        text-transform: uppercase;
+        color: $latte;
+        padding: 15px 0;
+        @include breakpoint(md) {
+          font-size: 14px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-image: url(../../images/content/line-latte-tabs.svg);
+          background-position: 0 0;
+          background-size: contain;
+          background-repeat: repeat;
+        }
+      }
+      h4 {
+        color: $white;
+        min-height: 56px;
+        max-width: 355px;
+        @include breakpoint(md) {
+          font-size: 14px;
+        }
+      }
+      p {
+        color: $white;
+        font-weight: 300;
+        letter-spacing: -1px;
+        @include breakpoint(md) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.section-bottom {
+  padding: 15px 0 80px;
+  h3 {
+    max-width: 885px;
+    margin: 0 auto 30px;
+    font-size: 36px;
+    text-align: center;
+    @include breakpoint(md) {
+      font-size: 21px;
+    }
+
+  }
+
+  .more-text {
+    max-width: 840px;
+    margin: 0 auto;
+    max-height: 50px;
+    overflow: hidden;
+    @include breakpoint(md) {
+      max-height: 70px;
+    }
+    li {
+      padding-left: 15px;
+      font-weight: 300;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 22%;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $black;
+      }
+    }
+    p {
+      font-weight: 300;
+      line-height: 1.625em;
+    }
+
+    &.active {
+      max-height: 100%;
+    }
+  }
+
+  .block-read {
+    max-width: 980px;
+    margin: 0 auto;
+    .more-link {
+      max-width: 135px;
+      display: block;
+      margin-left: auto;
+      margin-top: -27px;
+      position: relative;
+      z-index: 1;
+      @include breakpoint(md) {
+        max-width: 111px;
+      }
+
+      &.less {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.section-review {
+  .block-wrapper {
+    padding-left: 11.8%;
+    @include flexbox();
+    @include flexwrap(wrap);
+    margin: 0 -60px;
+    @include breakpoint(xxl) {
+      margin: 0 -30px;
+    }
+    @include breakpoint(xl) {
+      margin-right: 0;
+    }
+    @include breakpoint(md) {
+      margin: 0 -20px;
+      padding-left: 0;
+    }
+  }
+
+  h2 {
+    text-align: left;
+    @include breakpoint(md) {
+      text-align: center;
+    }
+  }
+
+  .block-book {
+    width: 50%;
+    padding-right: 5%;
+    position: relative;
+    z-index: 2;
+    @include breakpoint(lg) {
+      width: 100%;
+      padding-right: 0;
+    }
+    @include breakpoint(md) {
+      padding: 0 20px;
+    }
+  }
+
+  .book-list {
+    li {
+      max-width: 734px;
+      border: 1px solid $latte;
+      border-radius: 10px;
+      padding: 30px 45px;
+      margin-bottom: 30px;
+      background-color: #f6f6f6;
+      position: relative;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        width: 0;
+        height: 0;
+      }
+      &:after {
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 13px solid #f6f6f6;
+        right: 20px;
+      }
+      &:before {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 16px solid $latte;
+        right: 18px;
+      }
+
+      h5 {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      p {
+        font-weight: 300;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .block-form {
+    background-color: $latte;
+    padding: 42px 0 42px 82px;
+    color: $white;
+    width: 50%;
+    @include breakpoint(xl) {
+      padding: 20px 20px 37px;
+    }
+    @include breakpoint(lg) {
+      width: 100%;      
+    }
+
+    &.dots-bg {
+      &:before {
+        top: 50%;
+        left: 0;
+        transform: translate(-85%, -50%);
+        z-index: 1;
+        @include breakpoint(xl) {
+          content: none;
+        }
+      }
+    }
+
+    h2 {
+      color: $white;
+    }
+  }
+}
+
+.reserve {
+  @include flexbox();
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 3;
+
+  &.show {
+    top: 0;
+    right: 0;
+
+    .reserve-btn {
+      right: 100%;
+      border-right-color: $latte;
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
+    .reserve-content {
+      display: block;
+      @include breakpoint(md) {
+        width: 100vw;
+      }
+    }
+  }
+
+  &-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 17px 8px;
+    border: 2px solid $chocolate;
+    background-color: $latte;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: $chocolate;
+    font-weight: $font-weight-bold;
+    letter-spacing: .1em;
+    box-shadow: 0px 0px 20px rgba(38, 10, 0, 0.3);
+    width: 116px;
+    height: 145px;
+    @include breakpoint(lg) {
+      width: 68px;
+      height: 70px;
+      padding: 14px 8px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 17px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $white;
+      background-image: url(../../images/content/reserve-icon.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+      @include breakpoint(lg) {
+        width: 38px;
+        height: 38px;
+        top: 14px;
+      }
+    }
+
+    span {
+      padding-top: 59px;
+      display: inline-block;
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &-content {
+    display: none;
+    padding: 20px 40px;
+    background-color: $latte;
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 3;
+    @include breakpoint(lg) {
+      padding: 20px;
+    }
+
+    h3 {
+      white-space: nowrap;
+    }
+
+    .close {
+      margin-left: 0;
+      position: absolute;
+      top: 0;
+      right: 20px;
+      z-index: 1;
+    }
+
+    .form {
+      input[type="submit"] {
+        padding: 20px;
+      }
+
+      .form-group {
+        p {
+          color: $white;
+          strong {
+            font-family: $second-font-family;
+          }
+        }
+        img {
+          width: 100%;
+          vertical-align: middle;
+        }
+      }
+
+      .form-group-block {
+        @include flexbox();
+        padding-right: 0;
+        margin: 0 -8px 18px;
+
+        .form-group {
+          width: 50%;
+          padding: 0 8px;
+        }
+
+        select {
+          height: 48px;
+        }
+      }
+
+      .form-control-person {
+        color: $chocolate;
+      }
+
+      .btn-submit {
+        max-width: 262px;
+        @include breakpoint(md) {
+          max-width: 229px;
+        }
+      }
+    }
+  }
+}
+
+.close {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto;
+
+  span {
+    width: 27px;
+    height: 3px;
+    background-color: transparent;
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        width: 27px;
+        height: 3px;
+        background: $chocolate;
+        transition: 0.3s;
+        position: absolute;
+        top: 50%;
+        left: 24%;
+        transform-origin: 50% 50%;
+    }
+    &:before {
+      transform: rotate3d(0, 0, 1, -45deg);
+    }
+
+    &:after {
+      transform: rotate3d(0, 0, 1, 45deg);
+    }
+  }
+}

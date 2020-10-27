@@ -1,0 +1,369 @@
+body {
+    background: $base-background;
+    color: $base-color;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    @include breakpoint(md) {
+        font-size: $base-font-size-mobile;
+    }
+}
+
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+p {
+    margin-bottom: 20px;
+    &:last-child {
+        margin: 0;
+    }
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    transition: all .3s ease;
+    &:hover {
+        //color: darken($link-color, 10%);
+        color: $latte;
+        text-decoration: none;
+    }
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading-color;
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    margin: 0 0 20px;
+    position: relative;
+    a {
+        color: $heading-color;
+        &:hover {
+            color: $link-color;
+            text-decoration: none;
+        }
+    }
+}
+
+h1 {
+    font-size: 64px;
+    @include breakpoint(xxxl) {
+        font-size: 52px;
+    }
+    @include breakpoint(xxl) {
+        font-size: 48px;
+    }
+    @include breakpoint(lg) {
+        font-size: 28px;
+    }
+    @include breakpoint(md) {
+        font-size: 24px;
+    }
+}
+
+h2 {
+    font-size: 54px;
+    @include breakpoint(xxl) {
+        font-size: 38px;
+    }
+    @include breakpoint(md) {
+        font-size: 21px;
+    }
+}
+
+h3 {
+    font-size: 30px;
+    @include breakpoint(md) {
+        font-size: 21px;
+    }
+}
+
+h4 {
+    font-size: 24px;
+    @include breakpoint(xxl) {
+        font-size: 20px;
+    }
+}
+
+h5 {
+    font-size: 18px;
+    @include breakpoint(xxl) {
+        font-size: 16px;
+      }
+    @include breakpoint(md) {
+        font-size: 14px;
+    }
+}
+
+h6 {
+    font-size: 16px;
+}
+
+.h3 {
+    font-size: 36px;
+    @include breakpoint(md) {
+      font-size: 21px;
+    }
+}
+
+
+button {
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    min-width: $min-width;
+    max-width: $max-width;
+    padding: 0 60px;
+    margin: 0 auto;
+    position: relative;
+    @include breakpoint(xxl) {
+        padding: 0 30px;
+    }
+    @include breakpoint(md) {
+        padding: 0 20px;
+    }
+}
+
+.container-min {
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 19.32vw;
+    margin: 0 auto;
+    @include flexbox();   
+    @include flexwrap(wrap);
+    position: relative;
+    @include breakpoint(xxl) {
+      padding: 0 30px;
+    }
+    @include breakpoint(md) {
+      padding: 0 20px;
+    }
+  }
+
+main {
+    padding: 0;
+}
+
+.section {
+    clear: both;
+    padding: 50px 0;
+    @include breakpoint(lg) {
+        padding: 30px 0;
+    }
+}
+
+.section-top {
+    position: relative;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 5vw;
+        width: 19.3vw;
+        height: 7.3vw;
+        background-image: url(../../images/content/line-dark.svg);
+        background-position: 0 0;
+        background-size: 100% 13%;
+        background-repeat: repeat;
+        @include breakpoint(lg) {
+            content: none;
+        }
+    }
+    &:before{
+        left: 0;
+    }
+    &:after{
+        right: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 15px 0 25px;
+    }
+}
+
+.mobile-only {
+    display: none;
+    @include breakpoint(xl) {
+        display: block;
+    }
+}
+
+.desctop-only {
+    @include breakpoint(md) {
+        display: none;
+    }
+}
+
+.d-flex {
+    @include flexbox();
+}
+
+.area-title {
+    position: relative;
+    display: inline-block;
+    padding-left: 24px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $latte;
+        width: 4px;
+        height: .76em;
+    }
+}
+
+.block-list {
+    @include flexbox();
+    @include flexwrap(wrap);
+    //margin: 0 -1%;
+    margin: 0 -14px;
+    @include breakpoint(md) {
+        margin: 0 -10px;
+    }
+
+    li {
+      width: 25%;
+      //@extend: 1%;
+      padding: 14px;
+      @include breakpoint(md) {
+        width: 50%;
+        padding: 10px;
+      }
+      a {
+        display: block;
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+}
+
+.dots-bg {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 16vw;
+        height: 7.3vw;
+        background-image: url(../../images/content/line-dark.svg);
+        background-position: 0 0;
+        background-size: 99% 13%;
+        background-repeat: repeat;
+    }  
+}
+
+.dots-bg__latte {
+    &:before {
+        background-image: url(../../images/content/line-latte.svg);
+    }
+}
+
+.block-img {
+    img {
+        width: 100%;
+        vertical-align: middle;
+    }
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+blockquote {
+
+    p {
+      padding: 0 64px;
+      font-style: italic;
+      font-size: 21px;
+      line-height: 1.6em;
+      font-family: $second-font-family;
+      color: $chocolate;
+      position: relative;
+      @include breakpoint(lg) {
+        max-width: 393px;
+        padding: 30px 57px;
+      }
+      @include breakpoint(md) {
+        font-size: 18px; 
+      }
+      @include breakpoint(xs) {
+        padding: 30px 35px;
+      }
+
+    &:before,
+    &:after {
+      content: "\201C";
+      font-family: $second-font-family;
+      font-size: 96px;
+      font-style: italic;
+      color: $latte;
+      position: absolute;
+    }
+    &:before {
+      top: 11px;
+      left: 0;
+      @include breakpoint(lg) {
+        top: 40px;
+      }
+      @include breakpoint(xs) {
+        left: -22px;
+      }
+    }
+    &:after {
+      bottom: 0;
+      right: 0;
+      transform: rotate(-180deg) translateY(100%); 
+      @include breakpoint(xs) {
+        right: -20px;
+      }
+    }
+      
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  .date-news {
+    p {
+        font-family: $second-font-family;
+        letter-spacing: .1em;
+        color: $latte;
+    }
+  }
+
+.ml-auto {
+    margin-left: auto;
+}

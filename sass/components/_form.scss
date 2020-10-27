@@ -1,0 +1,494 @@
+.form-group {
+  position: relative;
+  margin-bottom: 59px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include breakpoint(xxl) {
+    margin-bottom: 40px;
+  }
+  @include breakpoint(md) {
+    margin-bottom: 32px;
+  }
+}
+
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    padding: 8px 0;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid $white;
+    width: 100%;
+    font-size: $base-font-size;
+    font-family: $second-font-family;
+    color: $white;
+    background-color: transparent;
+    position: relative;
+
+    &:active,
+    &:focus {
+        outline: 0;
+        outline-offset: 0;
+    }
+
+    &:hover {
+        outline: 0;
+        outline-offset: 0;
+    }
+}
+
+select {
+  height: 48px;
+}
+
+input[data-toggle="datepicker"] {
+  background-color: $milk;
+  border: 2px solid $white;
+  color: $chocolate;
+  font-weight: $font-weight-bold;
+  height: 48px;
+  padding: 8px 20px;
+}
+input[data-toggle="datepicker"]:focus>.arrow {
+  transform: rotate(180deg);
+}
+
+select {
+  background-color: $milk;
+  border: 2px solid $white;
+  color: $chocolate;
+  font-weight: $font-weight-bold;
+  padding-left: 20px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+label {
+  font-family: $second-font-family;
+}
+
+input[data-toggle="datepicker"]::placeholder {
+  color: $chocolate;
+  font-size: 16px;
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  opacity: 1;
+}
+
+.form-control::placeholder {
+  color: $white;
+  font-size: 16px;
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  padding-bottom: 17px;
+  opacity: 1;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: $white;
+  font-size: 16px;
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  padding-bottom: 17px;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: $white;
+  font-size: 16px;
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  padding-bottom: 17px;
+  opacity: 1;
+}
+
+.form-control-label {
+  display: block;
+  padding: 5px 0;
+  font-size: $base-font-size;
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+}
+
+textarea {
+  background: #EFDABA;
+  border: 2px solid $white;
+  height: 200px;
+  color: $chocolate;
+  resize: none;
+  overflow-y: auto;
+  width: 100%;
+  outline: none;
+  @include breakpoint(md) {
+    height: 120px;
+    max-width: inherit;
+  }
+}
+
+.form-control-submit {
+  padding-left: 30px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:before {
+    right: 1px;
+    width: 24px;
+    height: 3px;
+    background-color: $latte;
+  }
+
+  &:after {
+    right: 0;
+    border-top: 6px solid transparent;
+    border-left: 6px solid $latte;
+    border-bottom: 6px solid transparent;
+  }
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  letter-spacing: .1em;
+  padding: 20px 20px 20px 40px;
+  text-align: left;
+  @include breakpoint(md) {
+    height: 51px;
+    padding: 7px 20px;
+  }
+}
+
+.btn-submit {
+  height: 71px;
+  padding: 0;
+  max-width: 230px;
+  background-color: $white;
+  margin-left: auto;
+  @include breakpoint(md) {
+    height: 51px;
+    max-width: 157px;
+  }
+
+  &:before,
+  &:after {
+    background-color: $chocolate;
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+  }
+}
+
+.form-group-block {
+  padding-right: 28%;
+  @include breakpoint(xl) {
+    padding-right: 0;
+  }
+}
+
+.form-control {
+  &.form-control-person {
+    height: 48px;
+    background-color: $white;
+    padding: 8px 20px;
+  }
+}
+.form-control-person::placeholder {
+  color: $chocolate;
+}
+
+.form-control-person::-webkit-input-placeholder {
+  color: $chocolate;
+}
+
+.form-control-person:-ms-input-placeholder {
+  color: $chocolate;
+}
+
+.form-control-person::-ms-input-placeholder {
+  color: $chocolate;
+}
+
+.form-control-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.form-control-label-file {
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: $chocolate;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+
+  span {
+    display: block;
+    text-transform: none;
+    font-family: $base-font-family;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+}
+
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  @include flexbox();
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid $chocolate;
+  }
+}
+
+
+// select2
+
+.select2-selection__placeholder {
+  font-weight: $font-weight-bold;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single {
+  background-color: $milk;
+  border: 2px solid $white;
+  border-radius: 0;
+  padding: 8px 20px;
+  height: 48px;
+}
+
+.select2-container .select2-selection--single {
+  outline: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: $chocolate;
+  font-family: $second-font-family;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 46px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: $chocolate transparent transparent transparent;
+  border-style: solid;
+  border-width: 12px 6px 0 6px;
+  margin-left: -14px;
+  margin-top: -5px;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent $chocolate transparent;
+  border-width: 0 6px 12px 6px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  color: $chocolate;
+  font-size: $base-font-size;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding: 0;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: $white;
+  color: $black;
+}
+
+.select2-dropdown {
+  background-color: $milk;
+  border: 2px solid $white;
+  border-radius: 0;
+}
+
+
+// datepicker
+
+.datepicker-panel>ul>li.highlighted {
+  background-color: $milk;
+}
+
+.datepicker-dropdown {
+  border: 1px solid $milk;
+  -webkit-box-shadow: 0 3px 6px $milk;
+  box-shadow: 0 3px 6px $milk;
+}
+
+.datepicker-panel>ul>li.picked, 
+.datepicker-panel>ul>li.picked:hover {
+  color: $chocolate;
+}
+
+.datepicker-top-left, 
+.datepicker-top-right {
+  border-top-color: $chocolate;
+}
+
+.datepicker-top-left:before, 
+.datepicker-top-right:before {
+  border-bottom-color: $chocolate;
+}
+
+.datepicker-panel>ul>li:hover,
+.datepicker-panel>ul>li.highlighted:hover {
+  background-color: $milk;
+}
+
+
+// radio
+
+.block-checkbox {
+  position: relative;
+  padding-left: 21px;
+
+  .form-control {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border: 1px solid $latte;
+    border-radius: 50%;
+
+    &.active {
+      border-width: 3px;
+    }
+  }
+}
+
+.block-checkbox input:checked~.checkmark {
+  border-width: 3px;
+}
+
+/* -------------------- form-white -------------------- */
+.form-white {
+  
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  .form-control-label {
+    line-height: 1.19em;
+    letter-spacing: 0.1em;
+    margin-bottom: 13px;
+    padding: 0;
+    @include breakpoint(md) {
+      margin-bottom: 10px; 
+      font-size: 14px;
+    }
+    span {
+      color: $red;
+    }
+  }
+
+  .form-control {
+    border: 1px solid $latte;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: $black;
+    @include breakpoint(md) {
+      height: 50px;
+    }
+  }
+
+  .form-control::placeholder,
+  textarea::placeholder {
+    color: $gray;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    line-height: 1.19em;
+    @include breakpoint(md) {
+      font-size: 14px;
+    }
+  }
+  
+  .form-control::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color: $gray;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    line-height: 1.19em;
+    @include breakpoint(md) {
+      font-size: 14px;
+    }
+  }
+  
+  .form-control:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    color: $gray;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    line-height: 1.19em;
+    @include breakpoint(md) {
+      font-size: 14px;
+    }
+  }
+  
+  .form-control-person::-ms-input-placeholder,
+  textarea::-ms-input-placeholder {
+    color: $gray;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    line-height: 1.19em;
+    @include breakpoint(md) {
+      font-size: 14px;
+    }
+  }
+
+  textarea {
+    border: 1px solid $latte;
+    background: $white;
+    height: 123px;
+    padding: 20px;
+  }
+
+  .block-checkbox {
+    .checkmark {
+      border-color: $chocolate;
+    }
+  }
+}

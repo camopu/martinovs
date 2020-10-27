@@ -1,0 +1,281 @@
+.btn {
+  max-width: 354px;
+  width: 100%;
+  height: 71px;
+  padding: 24px 30px 25px;
+  text-align: left;
+  transition: .3s;
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  line-height: 1.18em;
+  letter-spacing: .1em;
+  @include flexbox();
+  align-items: center;
+  justify-content: space-between;
+  color: $chocolate;
+  text-transform: uppercase;
+  border: 2px solid $chocolate;
+  box-shadow: none;
+  border-radius: 0;
+  position: relative;
+  @include breakpoint(md) {
+    padding: 14px 15px 15px;
+    font-size: 12px;
+    max-width: 268px;
+    height: 51px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    background-color: $latte;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+  }
+
+  &:before {
+    width: 165px;
+    height: 2px;
+    left: calc(100% - 165px);
+    bottom: -11px;
+    @include breakpoint(md) {
+      width: 117px;
+      left: calc(100% - 117px);
+    }    
+  }
+
+  &:after {
+    width: 2px;
+    height: 50px;
+    top: calc(100% - 50px);
+    right: -10px;
+    @include breakpoint(md) {
+      height: 30px;
+      top: calc(100% - 30px);
+    }
+  }
+
+  &:hover {
+    &:before {
+      left: 0;
+    }
+    &:after {
+      top: 0;
+    }
+  }
+
+  span{
+    padding-left: 35px;
+    position: relative;
+    
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:before {
+      right: 1px;
+      width: 24px;
+      height: 3px;
+      background-color: $latte;
+    }
+
+    &:after {
+      right: 0;
+      border-top: 6px solid transparent;
+      border-left: 6px solid $latte;
+      border-bottom: 6px solid transparent;
+    }
+  }
+}
+
+.btn-confect {
+  width: 100%;
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $latte;
+  border: 2px solid $latte;
+  padding: 21px 27px;
+  height: 71px;
+  white-space: nowrap;
+  @include flexbox();
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+
+  .header-btn-icon {
+    margin: 0;
+  }
+
+  &.is-active {
+    color: $chocolate;
+    z-index: 5;
+
+    .header-btn-icon {
+      background: transparent;
+      &:before,
+      &:after {
+        background: $chocolate;
+        transform-origin: 50% 50%;
+        top: 0;
+      }
+
+      &:before {
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+
+      &:after {
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+    }
+  }
+}
+
+.more-link {
+  color: $white;
+  font-size: 14px;
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  background-color: $latte;
+  padding: 4px 8px;
+  border-radius: 30px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  border: none;
+  z-index: 1;
+  position: relative;
+}
+
+.btn-category {
+  
+  @include flexbox();
+  align-items: center;
+  width: 190px;
+  margin: 0 auto;
+
+  .header-btn-icon {
+    display: inline-block;
+    margin: 0 15px 0 0;
+    background: $latte;
+    &:before,
+    &:after {
+      background: $latte;
+    }
+  }
+
+  strong {
+    font-size: 12px;
+    font-family: $second-font-family;
+    letter-spacing: 0.1em;
+    line-height: 1.17em;
+    text-transform: uppercase;
+    border-bottom: 1px dashed $latte;
+    color: $chocolate;
+    padding-bottom: 4px;
+  }
+}
+
+.btn-news { 
+  font-family: $second-font-family;
+  font-weight: $font-weight-bold;
+  line-height: 1.18em;
+  letter-spacing: .1em;
+  color: $chocolate;
+  text-transform: uppercase;
+  max-width: 300px;
+  width: 100%;
+  height: 87px;
+  background-color: $milk;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  transition: all .3s ease;
+  position: absolute;
+  bottom: 87px;
+  @include breakpoint(xxl) {
+    width: 39px;
+    height: 41px;
+    font-size: 0;
+  }
+  @include breakpoint(md) {
+    bottom: 50%;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:before {
+    right: 26px;
+    width: 24px;
+    height: 3px;
+    background-color: $chocolate;
+  }
+  &:after {
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+
+  &-prev {
+    left: 0;
+    text-align: right;
+    padding: 20px 20px 20px 25px;
+    @include breakpoint(xxl) {
+      padding: 8px;
+    }
+
+    &:before {
+      left: 26px;
+      @include breakpoint(xxl) {
+        left: 8px;
+      }
+    }
+    &:after {
+      left: 25px;
+      border-right: 6px solid $chocolate;
+      @include breakpoint(xxl) {
+        left: 7px;
+      }
+    }
+  }
+
+  &-next {
+    right: 0;
+    text-align: left;
+    padding: 20px 25px 20px 35px;
+    @include breakpoint(xxl) {
+      padding: 8px;
+    }
+
+    &:before {
+      right: 26px;
+      @include breakpoint(xxl) {
+        right: 8px;
+      }
+    }
+  
+    &:after {
+      right: 25px;
+      border-left: 6px solid $chocolate;
+      @include breakpoint(xxl) {
+        right: 7px;
+      }
+    }
+  }
+}
